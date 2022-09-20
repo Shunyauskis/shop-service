@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private List<ProductTemplateDTO> productTemplate;
 }
