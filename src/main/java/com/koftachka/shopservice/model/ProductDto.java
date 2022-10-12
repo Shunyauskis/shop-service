@@ -17,12 +17,12 @@ public class ProductDto {
 
     @Id
     private long id;
-    @Column(name = "name",nullable = false, unique = true)
+    @Column(name = "name",nullable = false)
     private String name;
     @Column(name = "description")
     private String description;
     private String serialNo;
-    private List<CharacteristicDTO> characteristic;
+//    private List<CharacteristicDTO> characteristic;
 
 
 

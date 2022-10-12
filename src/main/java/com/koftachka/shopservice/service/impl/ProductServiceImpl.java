@@ -1,6 +1,8 @@
 package com.koftachka.shopservice.service.impl;
 
 import com.koftachka.shopservice.model.ProductDto;
+import com.koftachka.shopservice.repositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -9,9 +11,18 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService{
+
+    private ProductRepository productRepository;
+
+    @Autowired
+    public ProductService productService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+        return null;
+    }
+
     @Override
     public List<ProductDto> getAll() {
-        return null;
+        return productRepository.findAll();
     }
 
     private List<ProductDto> products = new ArrayList<>();
